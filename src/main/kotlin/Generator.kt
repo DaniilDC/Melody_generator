@@ -15,6 +15,9 @@ fun generateMelody(chords: List<String>): String {
     val melodyLength = (2..10).random() // случайная длина мелодии от 2 до 10 аккордов
     val melody = StringBuilder()
 
+    if (chords.isEmpty()) {
+        return "" // Возвращаем пустую строку, если входной список аккордов пуст
+    }
     repeat(melodyLength) {
         val randomChord = chords.random()
         melody.append("$randomChord ")
