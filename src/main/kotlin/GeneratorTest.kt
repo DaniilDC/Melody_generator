@@ -18,4 +18,11 @@ class MelodyGeneratorTest {
         assertTrue(melody.isNotBlank())
         assertTrue(melody.split(" ").all { it in chordsInput })
     }
+    @Test
+    fun `test melody length`() {
+        val chordsInput = listOf("C", "Dm", "G", "Am")
+        val melody = generateMelody(chordsInput)
+        val melodyLength = melody.split(" ").size
+        assertTrue(melodyLength in 2..10)
+    }
 }
